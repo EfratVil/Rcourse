@@ -349,6 +349,18 @@ correlations <- cor(longley) # The correlations of the longley dataset
 lattice::levelplot(correlations)
 ```
 
+corrplot is a nice package with many options to view correlation matrix.
++ methods -  several visualization methods can be used: “circle”, “square”, “ellipse”, “number”, “shade”, “color”. 
++ order - Several methods available for ordering the variables in the correlation matrix. Default is original variables order.
++ tl.pos - show variable labels (Y/N).
++ cl.pos - show colors legend (Y/N).
+
+```{r}
+ library(corrplot)
+ corrplot(correlations, order="AOE", cl.pos="n", tl.pos="n")  
+ corrplot(correlations, method="ellipse", cl.pos="n")
+ corrplot(correlations, order = "AOE", method="shade")
+```
 
 #### Parallel Coordinate Plots {#parcoord}
 TODO
